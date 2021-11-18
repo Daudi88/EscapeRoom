@@ -28,3 +28,14 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run build --if-present
+    
+  deploy:
+    needs: build
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: https://flyktrummet.netlify.app/
+    steps:
+      - name: deploy
+        run: echo "deploying"
