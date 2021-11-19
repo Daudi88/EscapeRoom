@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: production
-      url: https://flyktrummet.netlify.app/
+      url: https://clever-allen-0e8e9b.netlify.app
     steps:
       - name: deploy
         run: echo "deploying"
